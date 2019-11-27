@@ -5,11 +5,9 @@ export interface TemporalIntroProps {
 
 export class TemporalIntro extends React.Component<TemporalIntroProps> {
   render() {
-    return (
-      <div>
-        <h1>Temporal</h1>
-        <p>A TC39 proposal currently in {this.props.stage}</p>
-      </div>
-    );
+    return [
+      <h1>Temporal</h1>,
+      <p>A TC39 proposal currently in {this.props.stage}</p>
+    ];
   }
 }
