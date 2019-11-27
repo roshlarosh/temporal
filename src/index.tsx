@@ -1,5 +1,5 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { TemporalIntro } from "./temporal-intro";
+import { AppMain } from "./app";
 
-ReactDOM.render(<TemporalIntro stage={4} />, document.getElementById("root"));
+ReactDOM.render(<AppMain />, document.getElementById("root"));
