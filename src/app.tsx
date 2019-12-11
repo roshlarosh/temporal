@@ -8,7 +8,7 @@ export class App extends React.Component {
     return [
       <TemporalIntro stage={4}></TemporalIntro>,
       <InlineClickButton name="START"></InlineClickButton>,
-      <InputTime value={this.state}></InputTime>
+      <InputTime></InputTime>
     ];
   }
 }

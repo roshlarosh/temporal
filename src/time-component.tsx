@@ -1,23 +1,22 @@
 import * as React from "react";
 
 export interface InputTimeProp {
-  value: string;
+  time: string;
 }
 
 export class InputTime extends React.Component<InputTimeProp> {
-  constructor() {
-    super();
-
+  constructor(props) {
+    super(props);
     this.state = {
+      justClicked: null,
       time: "12:34"
     };
-
-    this.onUpdate = this.onUpdate.bind(this);
   }
 
-  onUpdate() {
-    this.setState({ time: event.target.value });
-  }
+  onUpdate = event => {
+    event.preventDefault();
+    this.setState({ justClicked: time });
+  };
 
   render() {
     return (
