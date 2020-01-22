@@ -1,0 +1,43 @@
+:root {
+  --background-color: rgb(255, 187, 228);
+  --foreground-color: #111;
+  --line-thickness: 2px;
+
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+  transition: color 0.5s ease-out, background-color 0.5s ease-in 0.4s;
+  font-family: 'Space Mono', monospace;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  font-weight: 400;
+  src: url('../../public/fonts/SpaceMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  font-weight: 700;
+  src: url('../../public/fonts/SpaceMono-Bold.ttf') format('truetype');
+}
+
+/* StrokeGrid */
+.strokegrid-row {
+  display: flex;
+  border: var(--line-thickness) solid currentColor;
+}
+.strokegrid-row + .strokegrid-row {
+  border-top-width: 0px;
+}
+.strokegrid-row > * {
+  padding: 1rem;
+}
+.strokegrid-row > * + * {
+  border-left: var(--line-thickness) solid currentColor;
+}
+.strokegrid-row p:first-child {
+  margin-top: 0;
+}
+.strokegrid-row p:last-child {
+  margin-bottom: 0;
+}
