@@ -1,35 +1,25 @@
 import * as React from "react";
 
-export interface InputTimeProp {
+export interface TimeComponentProps {
   time: string;
 }
 
-export class InputTime extends React.Component<InputTimeProp> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      justClicked: null,
-      time: "12:34"
-    };
-  }
+const InputTime = (props: TimeComponentProps) => {
+  const [time, setTime] = React.useState(props.time);
+  console.log(props.time);
 
-  onUpdate = event => {
-    event.preventDefault();
-    this.setState({ justClicked: time });
-  };
+  const onUpdate = (event: any) => setTime(event.target.value);
 
-  render() {
-    return (
-      <form>
-        <label>
-          Time:
-          <input
-            type="time"
-            value={this.state.value}
-            onChange={this.onUpdate}
-          />
-        </label>
-      </form>
-    );
-  }
-}
+  return (
+    <form>
+      <label>
+        Time:
+        <input type="time" value={time} onChange={onUpdate} />
+      </label>
+    </form>
+  );
+};
+
+//   event.preventDefault();
+
+export default InputTime;

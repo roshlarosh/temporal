@@ -1,15 +1,20 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-export interface InlineClick {
+export interface InlineClickButtonProps {
   name: string;
 }
 
-export class InlineClickButton extends React.Component<InlineClick> {
-  handleClick() {
+const InlineClickButton = (props: InlineClickButtonProps) => {
+  const [name, setName] = React.useState("");
+  const handleClick = () => {
     alert("The link was clicked.");
-  }
-  render() {
-    return <button onClick={this.handleClick}> {this.props.name} </button>;
-  }
-}
+  };
+  return (
+    <div>
+      <button onClick={handleClick}> {props.name} </button>
+    </div>
+  );
+};
+
+export default InlineClickButton;
