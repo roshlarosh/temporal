@@ -9,8 +9,11 @@ const App = () => {
     <div>
       <TemporalIntro stage={4}></TemporalIntro>
       <InlineClickButton name="START"></InlineClickButton>
-      <InputTime time={"19:19"}></InputTime>
-      <InputDate date={"2020-01-21"}></InputDate>
+      <InputTime time={"19:19"} update={time => console.log(time)}></InputTime>
+      <InputDate
+        date={"2020-01-21"}
+        update={date => console.log(date)}
+      ></InputDate>
     </div>
   );
 };
