@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-export interface InlineClickButtonProps {
+interface InlineClickButtonProps {
   name: string;
 }
 
